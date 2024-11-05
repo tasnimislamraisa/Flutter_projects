@@ -1,0 +1,68 @@
+{
+  "project_info": {
+    "project_number": "957380617692",
+    "project_id": "notiva-61aff",
+    "storage_bucket": "notiva-61aff.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:957380617692:android:22497b2dd2c182c39a1b19",
+        "android_client_info": {
+          "package_name": "com.example.notiva"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "957380617692-0up5ucbololrr6asbe7f0usb7n9hsj4v.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBicN0CzAclrr5Z7FMOccILQYMhuc8V1I8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "957380617692-0up5ucbololrr6asbe7f0usb7n9hsj4v.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:957380617692:android:083e7ca32730a8a69a1b19",
+        "android_client_info": {
+          "package_name": "com.example.notiva_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "957380617692-0up5ucbololrr6asbe7f0usb7n9hsj4v.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBicN0CzAclrr5Z7FMOccILQYMhuc8V1I8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "957380617692-0up5ucbololrr6asbe7f0usb7n9hsj4v.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
