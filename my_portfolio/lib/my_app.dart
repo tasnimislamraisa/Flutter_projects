@@ -9,7 +9,8 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: "My Portfolio",
       debugShowCheckedModeBanner: true,
-      home: HomeScreen(),
+      theme: ThemeData.dark(),
+      home: const HomeScreen(),
     );
   }
 }
