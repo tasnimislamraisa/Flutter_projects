@@ -1,0 +1,1 @@
+const double kMinDesktopWith=600.0;
