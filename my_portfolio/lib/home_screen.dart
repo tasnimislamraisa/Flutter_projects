@@ -8,7 +8,7 @@ import 'package:my_portfolio/presentation_layer/widgets/header_desktop.dart';
 import 'package:my_portfolio/presentation_layer/widgets/header_mobile.dart';
 import 'package:my_portfolio/presentation_layer/widgets/main_desktop.dart';
 import 'package:my_portfolio/presentation_layer/widgets/site_logo.dart';
-//raisa
+
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
 
