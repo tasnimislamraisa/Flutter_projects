@@ -1,7 +1,4 @@
-import 'package:flutter/cupertino.dart';
-import 'package:flutter/material.dart';
-
-import '../components/color.dart';
+import '../components/my_imports.dart';
 
 BoxDecoration kHeaderDecoration = BoxDecoration(
     gradient: const LinearGradient(

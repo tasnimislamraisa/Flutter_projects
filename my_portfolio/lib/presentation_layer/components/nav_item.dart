@@ -1,5 +1,4 @@
-import 'package:flutter/cupertino.dart';
-import 'package:flutter/material.dart';
+import '../components/my_imports.dart';
 
 List<String> navTitles=[
   "Home",

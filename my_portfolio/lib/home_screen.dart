@@ -1,13 +1,6 @@
-import 'package:flutter/material.dart';
-import 'package:my_portfolio/presentation_layer/components/color.dart';
-import 'package:my_portfolio/presentation_layer/components/nav_item.dart';
-import 'package:my_portfolio/presentation_layer/components/size.dart';
-import 'package:my_portfolio/presentation_layer/styles/style.dart';
-import 'package:my_portfolio/presentation_layer/widgets/drawer_mobile.dart';
-import 'package:my_portfolio/presentation_layer/widgets/header_desktop.dart';
-import 'package:my_portfolio/presentation_layer/widgets/header_mobile.dart';
-import 'package:my_portfolio/presentation_layer/widgets/main_desktop.dart';
-import 'package:my_portfolio/presentation_layer/widgets/site_logo.dart';
+import 'package:my_portfolio/presentation_layer/widgets/main_mobile.dart';
+
+import 'presentation_layer/components/my_imports.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -20,15 +13,16 @@ class _HomeScreenState extends State<HomeScreen> {
   final scaffoldKey = GlobalKey<ScaffoldState>();
   @override
   Widget build(BuildContext context) {
-    final screenSize=MediaQuery.of(context).size;
-    final screenWith=screenSize.width;
+    final screenSize = MediaQuery.of(context).size;
+    final screenWith = screenSize.width;
+    final screenHeight = screenSize.height;
     return LayoutBuilder(
         // constrain :it  contains information about screen/window size
         builder: (context, constrains) {
       bool isDesktop =
-          constrains.maxWidth >= 800; // Set a breakpoint for desktop screens
+          constrains.maxWidth >= 900; // Set a breakpoint for desktop screens
       bool isTablet = constrains.maxWidth >= 600 &&
-          constrains.maxWidth < 800; // Set a breakpoint for tablets
+          constrains.maxWidth < 900; // Set a breakpoint for tablets
       return Scaffold(
         key: scaffoldKey,
         backgroundColor: colors.scaffoldBg,
@@ -48,7 +42,8 @@ class _HomeScreenState extends State<HomeScreen> {
                   scaffoldKey.currentState?.openEndDrawer();
                 },
               ),
-            const MainDesktop(),
+            //const MainDesktop(),
+            isDesktop ? const MainDesktop() : const MainMobile(),
 
             // Skills
             Container(

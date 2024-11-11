@@ -1,6 +1,4 @@
-import 'package:flutter/material.dart';
-
-import '../components/color.dart';
+import '../components/my_imports.dart';
 
 class SiteLogo extends StatelessWidget {
   const SiteLogo({super.key, required this.onTap});
