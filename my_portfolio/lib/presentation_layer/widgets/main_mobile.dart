@@ -1,6 +1,3 @@
-
-import 'package:my_portfolio/presentation_layer/components/utils.dart';
-
 import '../components/my_imports.dart';
 
 class MainMobile extends StatelessWidget {

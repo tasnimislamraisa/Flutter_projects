@@ -33,7 +33,7 @@ class _HomeScreenState extends State<HomeScreen> {
             // Main
             if (isDesktop)
               const HeaderDesktop()
-            else
+            else if (isTablet)
               HeaderMobile(
                 onLogoTap: () {},
                 onMenuTap: () {
@@ -42,6 +42,7 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
             //const MainDesktop(),
             isDesktop ? const MainDesktop() : const MainMobile(),
+            //if (isDesktop) const MainDesktop() else if(isTablet) const MainMobile(),
 
             // Skills
             Container(

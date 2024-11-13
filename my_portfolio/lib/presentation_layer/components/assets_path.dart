@@ -9,4 +9,8 @@ class AsstesPath{
   static const String git = "$images/git.png";
   static const String java = "$images/java.png";
   static const String python = "$images/dart.png";
+  static const String android = "$images/android.png";
+  static const String ios = "$images/ios.png";
+  static const String web = "$images/web.png";
+
 }
