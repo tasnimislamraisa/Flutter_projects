@@ -5,10 +5,10 @@ class MainDesktop extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final screenSize = MediaQuery.of(context).size;
-    final screenWith = screenSize.width;
+    // final screenSize = MediaQuery.of(context).size;
+    // final screenWith = screenSize.width;
     return Container(
-      height: screenSize.height / 1.2,
+      height: Utils.getScreenSize(context).height / 1.2,
       constraints: const BoxConstraints(minHeight: 350.0),
       margin: const EdgeInsets.symmetric(horizontal: 20),
       child: Row(
@@ -40,9 +40,9 @@ class MainDesktop extends StatelessWidget {
           ),
           ClipOval(
             child: Image.asset(
-              "assets/images/dp.jpg",
-              width: screenWith / 2,
-              height: screenWith/2, // Make height equal to width to ensure a perfect circle
+              AsstesPath.pic,
+              width: Utils.getScreenWidth(context)  / 2,
+              height: Utils.getScreenWidth(context) /2, // Make height equal to width to ensure a perfect circle
               fit: BoxFit
                   .cover, // Ensures the image covers the circle without distortion
             ),

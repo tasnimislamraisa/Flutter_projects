@@ -1,4 +1,6 @@
 
+import 'package:my_portfolio/presentation_layer/components/utils.dart';
+
 import '../components/my_imports.dart';
 
 class MainMobile extends StatelessWidget {
@@ -6,13 +8,13 @@ class MainMobile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final screenSize = MediaQuery.of(context).size;
-    final screenWith = screenSize.width;
-    final screenHeight = screenSize.height;
+    // final screenSize = MediaQuery.of(context).size;
+    // final screenWith = screenSize.width;
+    // final screenHeight = screenSize.height;
     return Container(
-      margin: EdgeInsets.symmetric(horizontal: 40,vertical: 30),
-      height: screenHeight,
-      constraints: BoxConstraints(minHeight: 560.0),
+      margin: const EdgeInsets.symmetric(horizontal: 40,vertical: 30),
+      height: Utils.getScreenHeight(context),
+      constraints: const BoxConstraints(minHeight: 560.0),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -29,9 +31,8 @@ class MainMobile extends StatelessWidget {
             },
             blendMode: BlendMode.screen,   // enables you to manipulate the opacity of widget
             child: ClipOval(
-              child: Image.asset(
-                "assets/images/dp.jpg",
-                width: screenWith,
+              child: Image.asset(AsstesPath.pic,
+                width: Utils.getScreenWidth(context),
                 //height: screenWith, // Make height equal to width to ensure a perfect circle
                 fit: BoxFit.cover,  // Ensures the image covers the circle without distortion
               ),
