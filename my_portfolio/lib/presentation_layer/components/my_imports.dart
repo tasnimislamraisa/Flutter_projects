@@ -20,4 +20,7 @@ export 'package:my_portfolio/my_app.dart';
 export '../components/utils.dart';
 export '../components/assets_path.dart';
 
+export 'package:my_portfolio/presentation_layer/widgets/about_desktop.dart';
+export 'package:my_portfolio/presentation_layer/widgets/about_mobile.dart';
+
 

@@ -16,6 +16,7 @@ class MainDesktop extends StatelessWidget {
         children: [
           Column(
             mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               const Text(
                 "Hi,\nI'm Tasnim Islam Raisa\nA Flutter Developer",
@@ -30,9 +31,16 @@ class MainDesktop extends StatelessWidget {
                 height: 15,
               ),
               SizedBox(
-                width: 250,
+                width: 300,
                 child: ElevatedButton(
                   onPressed: () {},
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: colors.yellowPrimary, // Button background
+                    foregroundColor: Colors.white, // Text color
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(4), // Slightly rounded corners
+                    ),
+                  ),
                   child: const Text("Get in touch"),
                 ),
               ),

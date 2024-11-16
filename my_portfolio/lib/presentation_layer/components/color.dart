@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 class colors {
+  static const Color scaffoldBgDarkest = Color(0xff121218);
+  static const Color scaffoldBgDarker = Color(0xff1b1c27);
   static const Color scaffoldBg = Color(0xff252734);
   static const Color bgLight1 = Color(0xff333646);
   static const Color bgLight2 = Color(0xff424657);

@@ -5,57 +5,59 @@ class MainMobile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // final screenSize = MediaQuery.of(context).size;
-    // final screenWith = screenSize.width;
-    // final screenHeight = screenSize.height;
     return Container(
-      margin: const EdgeInsets.symmetric(horizontal: 40,vertical: 30),
-      height: Utils.getScreenHeight(context),
-      constraints: const BoxConstraints(minHeight: 560.0),
+      margin: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+      height: Utils.getScreenHeight(context)*0.8,
+      constraints: const BoxConstraints(minHeight: 350.0),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.start,
-        crossAxisAlignment: CrossAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          //image
+          // Profile Image
           ShaderMask(
             shaderCallback: (bounds) {
               return LinearGradient(
                 colors: [
                   colors.scaffoldBg.withOpacity(0.1),
-                  colors.scaffoldBg, // Add additional colors if needed
+                  colors.scaffoldBg,
                 ],
               ).createShader(bounds);
             },
-            blendMode: BlendMode.screen,   // enables you to manipulate the opacity of widget
+            blendMode: BlendMode.screen, // Adjust opacity
             child: ClipOval(
-              child: Image.asset(AsstesPath.pic,
-                width: Utils.getScreenWidth(context),
-                //height: screenWith, // Make height equal to width to ensure a perfect circle
-                fit: BoxFit.cover,  // Ensures the image covers the circle without distortion
+              child: Image.asset(
+                AsstesPath.pic,
+                width: Utils.getScreenWidth(context) * 0.5, // 60% of screen width
+                height: Utils.getScreenWidth(context) * 0.5, // Equal to width for perfect circle
+                fit: BoxFit.cover, // Ensures proper fit
               ),
             ),
-
           ),
-          const SizedBox(
-            height: 30,
-          ),
-          //intro text
+          const SizedBox(height: 35),
+          // Introduction Text
           const Text(
             "Hi,\nI'm Tasnim Islam Raisa\nA Flutter Developer",
+            textAlign: TextAlign.center, // Center-align text
             style: TextStyle(
-              fontSize: 24,
+              fontSize: 22, // Slightly smaller for mobile
               height: 1.5,
               fontWeight: FontWeight.bold,
               color: colors.whitePrimary,
             ),
           ),
-          const SizedBox(
-            height: 15,
-          ),
+          const SizedBox(height: 20),
+          // Button
           SizedBox(
-            width: 190,
+            width: 180, // Adjusted for mobile
             child: ElevatedButton(
               onPressed: () {},
+              style: ElevatedButton.styleFrom(
+                backgroundColor: colors.yellowPrimary, // Button background
+                foregroundColor: Colors.white, // Text color
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(4), // Slightly rounded corners
+                ),
+              ),
               child: const Text("Get in touch"),
             ),
           ),
