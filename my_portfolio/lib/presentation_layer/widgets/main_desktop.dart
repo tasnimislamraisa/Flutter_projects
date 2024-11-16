@@ -38,15 +38,19 @@ class MainDesktop extends StatelessWidget {
               ),
             ],
           ),
-          ClipOval(
-            child: Image.asset(
-              AsstesPath.pic,
-              width: Utils.getScreenWidth(context)  / 2,
-              height: Utils.getScreenWidth(context) /2, // Make height equal to width to ensure a perfect circle
-              fit: BoxFit
-                  .cover, // Ensures the image covers the circle without distortion
+          Center(
+            child: ClipOval(
+              child: SizedBox(
+                width: Utils.getScreenWidth(context) * 0.3, // Adjust size as needed
+                height: Utils.getScreenWidth(context) * 0.3, // Same as width for a perfect circle
+                child: Image.asset(
+                  AsstesPath.pic,
+                  fit: BoxFit.cover, // Ensures the image fills the circle without distortion
+                ),
+              ),
             ),
           ),
+
         ],
       ),
     );
