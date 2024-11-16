@@ -1,4 +1,5 @@
 import '../components/my_imports.dart';
+import 'package:animated_text_kit/animated_text_kit.dart';
 
 class MainMobile extends StatelessWidget {
   const MainMobile({super.key});
@@ -7,13 +8,13 @@ class MainMobile extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       margin: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
-      height: Utils.getScreenHeight(context)*0.8,
+      height: Utils.getScreenHeight(context) * 0.8,
       constraints: const BoxConstraints(minHeight: 350.0),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          // Profile Image
+          // Profile Image with ShaderMask
           ShaderMask(
             shaderCallback: (bounds) {
               return LinearGradient(
@@ -27,32 +28,49 @@ class MainMobile extends StatelessWidget {
             child: ClipOval(
               child: Image.asset(
                 AsstesPath.pic,
-                width: Utils.getScreenWidth(context) * 0.5, // 60% of screen width
+                width: Utils.getScreenWidth(context) * 0.5, // 50% of screen width
                 height: Utils.getScreenWidth(context) * 0.5, // Equal to width for perfect circle
                 fit: BoxFit.cover, // Ensures proper fit
               ),
             ),
           ),
           const SizedBox(height: 35),
-          // Introduction Text
-          const Text(
-            "Hi,\nI'm Tasnim Islam Raisa\nA Flutter Developer",
-            textAlign: TextAlign.center, // Center-align text
-            style: TextStyle(
-              fontSize: 22, // Slightly smaller for mobile
+          // Animated Greeting Text with Typewriter effect
+          DefaultTextStyle(
+            style: const TextStyle(
+              fontSize: 22, // Slightly smaller font for mobile
               height: 1.5,
               fontWeight: FontWeight.bold,
-              color: colors.whitePrimary,
+            ),
+            child: AnimatedTextKit(
+              animatedTexts: [
+                TypewriterAnimatedText(
+                  "Hi, I'm ",
+                  textStyle: const TextStyle(color: Colors.white),
+                  speed: const Duration(milliseconds: 100),
+                ),
+                TypewriterAnimatedText(
+                  "Tasnim Islam Raisa\n",
+                  textStyle: const TextStyle(color: Colors.yellow),
+                  speed: const Duration(milliseconds: 100),
+                ),
+                TypewriterAnimatedText(
+                  "A Flutter Developer",
+                  textStyle: const TextStyle(color: Colors.white),
+                  speed: const Duration(milliseconds: 100),
+                ),
+              ],
+              repeatForever: true, // Repeat the animation indefinitely
             ),
           ),
           const SizedBox(height: 20),
-          // Button
+          // "Get in touch" Button
           SizedBox(
-            width: 180, // Adjusted for mobile
+            width: 180, // Adjusted button width for mobile
             child: ElevatedButton(
               onPressed: () {},
               style: ElevatedButton.styleFrom(
-                backgroundColor: colors.yellowPrimary, // Button background
+                backgroundColor: colors.yellowPrimary, // Button background color
                 foregroundColor: Colors.white, // Text color
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(4), // Slightly rounded corners

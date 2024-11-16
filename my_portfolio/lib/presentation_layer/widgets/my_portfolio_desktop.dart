@@ -6,7 +6,7 @@ class MyPortfolioDesktop extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: Utils.getScreenSize(context).height /1.1,
+      height: Utils.getScreenSize(context).height ,
       constraints: const BoxConstraints(minHeight: 350.0),
       padding: EdgeInsets.all(80),
       color: colors.scaffoldBgDarkest,

@@ -1,3 +1,8 @@
+import 'package:my_portfolio/presentation_layer/widgets/contact_desktop.dart';
+import 'package:my_portfolio/presentation_layer/widgets/contact_mobile.dart';
+import 'package:my_portfolio/presentation_layer/widgets/my_experience_desktop.dart';
+import 'package:my_portfolio/presentation_layer/widgets/my_experience_mobile.dart';
+
 import 'presentation_layer/components/my_imports.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -11,9 +16,6 @@ class _HomeScreenState extends State<HomeScreen> {
   final scaffoldKey = GlobalKey<ScaffoldState>();
   @override
   Widget build(BuildContext context) {
-    final screenSize = MediaQuery.of(context).size;
-    final screenWith = screenSize.width;
-    final screenHeight = screenSize.height;
     return LayoutBuilder(
         // constrain :it  contains information about screen/window size
         builder: (context, constrains) {
@@ -57,21 +59,18 @@ class _HomeScreenState extends State<HomeScreen> {
             isDesktop ? const MyServiceDesktop() : const MyServiceMobile(),
 
             // my portfolio : Desktop
+            isDesktop ? const MyPortfolioDesktop() : const MyPortfolioMobile(),
 
+            // My Experience
 
+            isDesktop
+                ? const MyExperienceDesktop()
+                : const MyExperiencesMobile(),
 
-            // Project
-            Container(
-              height: 500,
-              width: double.maxFinite,
-              color: Colors.grey,
-            ),
             // contact
-            Container(
-              height: 500,
-              width: double.maxFinite,
-              color: Colors.blueGrey,
-            ),
+            isDesktop ? const ContactDesktop() : const ContactMobile(),
+
+
             // footer
             Container(
               height: 500,
