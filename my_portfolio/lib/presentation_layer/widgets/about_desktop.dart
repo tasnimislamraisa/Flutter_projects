@@ -6,9 +6,10 @@ class AboutDesktop extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      //width: double.maxFinite,
       height: Utils.getScreenSize(context).height / 1.2,
       constraints: const BoxConstraints(minHeight: 350.0),
-      margin: const EdgeInsets.symmetric(horizontal: 20),
+      //margin: const EdgeInsets.symmetric(horizontal: 20),
       color: Colors.black,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,

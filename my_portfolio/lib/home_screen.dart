@@ -1,5 +1,3 @@
-import 'package:my_portfolio/presentation_layer/widgets/my_service_desktop.dart';
-
 import 'presentation_layer/components/my_imports.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -56,14 +54,12 @@ class _HomeScreenState extends State<HomeScreen> {
             isDesktop ? const AboutDesktop() : const AboutMobile(),
 
             // My Service
-            const MyServiceDesktop(),
+            isDesktop ? const MyServiceDesktop() : const MyServiceMobile(),
+
+            // my portfolio : Desktop
 
 
-            Container(
-              height: 500,
-              width: double.maxFinite,
-              color: Colors.grey,
-            ),
+
             // Project
             Container(
               height: 500,

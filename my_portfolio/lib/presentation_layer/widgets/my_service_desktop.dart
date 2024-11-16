@@ -8,8 +8,8 @@ class MyServiceDesktop extends StatelessWidget {
     return Container(
       height: Utils.getScreenSize(context).height / 1.2,
       constraints: const BoxConstraints(minHeight: 350.0),
-      margin: const EdgeInsets.symmetric(horizontal: 50, vertical: 50),
-      padding: const EdgeInsets.all(80),
+      //margin: const EdgeInsets.symmetric(horizontal: 50, vertical: 50),
+      padding: const EdgeInsets.all(100),
       color: colors.scaffoldBg,
       child: Column(
         mainAxisAlignment: MainAxisAlignment.start,

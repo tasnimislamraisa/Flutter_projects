@@ -11,6 +11,7 @@ class AsstesPath{
   static const String python = "$images/dart.png";
   static const String android = "$images/android.png";
   static const String ios = "$images/ios.png";
-  static const String web = "$images/web.png";
+  static const String web = "$images/web.jpeg";
+  static const String software = "$images/software.jpeg";
 
 }
