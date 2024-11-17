@@ -1,3 +1,4 @@
+
 import '../components/my_imports.dart';
 
 class MyServiceDesktop extends StatelessWidget {
@@ -6,22 +7,21 @@ class MyServiceDesktop extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: Utils.getScreenSize(context).height ,
+      height: Utils.getScreenSize(context).height/1.2,
       constraints: const BoxConstraints(minHeight: 350.0),
-      //margin: const EdgeInsets.symmetric(horizontal: 50, vertical: 50),
-      padding: const EdgeInsets.all(100),
+      padding: const EdgeInsets.all(50), // Responsive padding
       color: colors.scaffoldBg,
       child: Column(
         mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          const Row(
+          // Title Row
+          Row(
             children: [
               Text(
                 "My ",
                 style: TextStyle(
-                  fontSize: 50,
-                  height: 1.5,
+                  fontSize: 22.sp, // Responsive font size
                   fontWeight: FontWeight.bold,
                   color: colors.whitePrimary,
                 ),
@@ -29,7 +29,7 @@ class MyServiceDesktop extends StatelessWidget {
               Text(
                 "Service",
                 style: TextStyle(
-                  fontSize: 50,
+                  fontSize: 22.sp, // Larger responsive font size
                   height: 1.5,
                   fontWeight: FontWeight.bold,
                   color: colors.yellowPrimary,
@@ -37,148 +37,99 @@ class MyServiceDesktop extends StatelessWidget {
               ),
             ],
           ),
-          const SizedBox(height: 25),
+          SizedBox(height: 1.h), // Responsive vertical spacing
           SizedBox(
-            width: Utils.getScreenWidth(context) / 2, // Adjusted for desktop screens
-            child: const Text(
+            width: 50.w, // Responsive width
+            child: Text(
               "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour",
               style: TextStyle(
-                fontSize: 18,
+                fontSize: 13.sp, // Responsive font size
                 height: 1.5,
                 color: colors.whitePrimary,
               ),
             ),
           ),
-          const SizedBox(height: 50),
+          SizedBox(height: 5.h), // Responsive vertical spacing
           // Row with three service containers
           Row(
             crossAxisAlignment: CrossAxisAlignment.center,
             mainAxisAlignment: MainAxisAlignment.spaceEvenly, // Evenly space the items
             children: [
               // First Container
-              Container(
-                width: Utils.getScreenWidth(context) * 0.2, // Larger size for desktop
-                height: Utils.getScreenWidth(context) * 0.2, // Proportional height
-                padding: const EdgeInsets.all(16),
-                margin: const EdgeInsets.symmetric(horizontal: 10),
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(8),
-                  color: colors.scaffoldBgDarkest,
-                ),
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  mainAxisSize: MainAxisSize.max,
-                  children: [
-                    Icon(
-                      Icons.code,
-                      size: 50,
-                      color: colors.yellowPrimary,
-                    ),
-                    const SizedBox(height: 12),
-                    const Text(
-                      "App Development",
-                      style: TextStyle(
-                        fontSize: 24,
-                        height: 1.5,
-                        fontWeight: FontWeight.bold,
-                        color: colors.whitePrimary,
-                      ),
-                    ),
-                    const Text(
-                      "Creating innovative mobile apps with Flutter. Bringing ideas to life with beautiful user interfaces.",
-                      textAlign: TextAlign.center,
-                      style: TextStyle(
-                        fontSize: 14,
-                        height: 1.5,
-                        color: colors.whitePrimary,
-                      ),
-                    ),
-                  ],
-                ),
+              _buildServiceContainer(
+                context,
+                icon: Icons.code,
+                title: "App Development",
+                description:
+                "Creating innovative mobile apps with Flutter. Bringing ideas to life with beautiful user interfaces.",
               ),
               // Second Container
-              Container(
-                width: Utils.getScreenWidth(context) * 0.2,
-                height: Utils.getScreenWidth(context) * 0.2,
-                padding: const EdgeInsets.all(16),
-                margin: const EdgeInsets.symmetric(horizontal: 10),
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(8),
-                  color: colors.scaffoldBgDarkest,
-                ),
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  mainAxisSize: MainAxisSize.max,
-                  children: [
-                    Icon(
-                      Icons.security,
-                      size: 50,
-                      color: colors.yellowPrimary,
-                    ),
-                    const SizedBox(height: 12),
-                    const Text(
-                      "Cyber Security",
-                      style: TextStyle(
-                        fontSize: 24,
-                        height: 1.5,
-                        fontWeight: FontWeight.bold,
-                        color: colors.whitePrimary,
-                      ),
-                    ),
-                    const Text(
-                      "Ensuring the security of systems and networks. Protecting data from threats and attacks.",
-                      textAlign: TextAlign.center,
-                      style: TextStyle(
-                        fontSize: 14,
-                        height: 1.5,
-                        color: colors.whitePrimary,
-                      ),
-                    ),
-                  ],
-                ),
+              _buildServiceContainer(
+                context,
+                icon: Icons.security,
+                title: "Cyber Security",
+                description:
+                "Ensuring the security of systems and networks. Protecting data from threats and attacks.",
               ),
               // Third Container
-              Container(
-                width: Utils.getScreenWidth(context) * 0.2,
-                height: Utils.getScreenWidth(context) * 0.2,
-                padding: const EdgeInsets.all(16),
-                margin: const EdgeInsets.symmetric(horizontal: 10),
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(8),
-                  color: colors.scaffoldBgDarkest,
+              _buildServiceContainer(
+                context,
+                icon: Icons.cloud,
+                title: "Cloud Computing",
+                description:
+                "Leveraging cloud infrastructure for scalable solutions. Empowering businesses with cloud technology.",
+              ),
+            ],
+          ),
+        ],
+      ),
+    );
+  }
+
+  // Helper method to build a service container
+  Widget _buildServiceContainer(
+      BuildContext context, {
+        required IconData icon,
+        required String title,
+        required String description,
+      }) {
+    return Container(
+      width: Utils.getScreenWidth(context) * 0.2,
+      height: Utils.getScreenWidth(context) * 0.2,
+      padding: const EdgeInsets.all(16),
+      margin: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(8),
+        color: colors.scaffoldBgDarkest,
+      ),
+      child: Wrap(
+        children: [
+          Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Icon(
+                icon,
+                size: 22.sp, // Responsive icon size
+                color: colors.yellowPrimary,
+              ),
+              SizedBox(height: 1.h), // Responsive spacing
+              Text(
+                title,
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  fontSize: 13.sp, // Responsive font size
+                  fontWeight: FontWeight.bold,
+                  color: colors.whitePrimary,
                 ),
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  mainAxisSize: MainAxisSize.max,
-                  children: [
-                    Icon(
-                      Icons.cloud,
-                      size: 50,
-                      color: colors.yellowPrimary,
-                    ),
-                    const SizedBox(height: 12),
-                    const Text(
-                      "Cloud Computing",
-                      style: TextStyle(
-                        fontSize: 24,
-                        height: 1.5,
-                        fontWeight: FontWeight.bold,
-                        color: colors.whitePrimary,
-                      ),
-                    ),
-                    const Text(
-                      "Leveraging cloud infrastructure for scalable solutions. Empowering businesses with cloud technology.",
-                      textAlign: TextAlign.center,
-                      style: TextStyle(
-                        fontSize: 14,
-                        height: 1.5,
-                        color: colors.whitePrimary,
-                      ),
-                    ),
-                  ],
+              ),
+              SizedBox(height: 1.h), // Responsive spacing
+              Text(
+                description,
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  fontSize: 11.sp, // Responsive font size
+                  color: colors.whitePrimary,
                 ),
               ),
             ],

@@ -1,3 +1,5 @@
+import 'package:sizer/sizer.dart';
+
 import 'presentation_layer/components/my_imports.dart';
 
 
@@ -6,11 +8,15 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: "My Portfolio",
-      debugShowCheckedModeBanner: true,
-      theme: ThemeData.dark(),
-      home: const HomeScreen(),
+    return Sizer(
+      builder: (context,orientation, deviceType) {
+        return MaterialApp(
+          title: "My Portfolio",
+          debugShowCheckedModeBanner: true,
+          theme: ThemeData.dark(),
+          home: const HomeScreen(),
+        );
+      }
     );
   }
 }

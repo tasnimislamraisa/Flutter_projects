@@ -28,3 +28,5 @@ export 'package:my_portfolio/presentation_layer/widgets/my_service_mobile.dart';
 export 'package:my_portfolio/presentation_layer/widgets/my_portfolio_desktop.dart';
 export 'package:my_portfolio/presentation_layer/widgets/my_portfolio_mobile.dart';
 
+export 'package:sizer/sizer.dart';
+

@@ -64,7 +64,7 @@ class _HomeScreenState extends State<HomeScreen> {
             // My Experience
 
             isDesktop
-                ? const MyExperienceDesktop()
+                ? MyExperienceDesktop()
                 : const MyExperiencesMobile(),
 
             // contact
