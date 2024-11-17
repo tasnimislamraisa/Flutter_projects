@@ -7,11 +7,11 @@ class MainMobile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
-      height: Utils.getScreenHeight(context) * 0.8,
+      //margin: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+      height: Utils.getScreenHeight(context) /1.2,
       constraints: const BoxConstraints(minHeight: 350.0),
       child: Column(
-        mainAxisAlignment: MainAxisAlignment.start,
+        mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           // Profile Image with ShaderMask

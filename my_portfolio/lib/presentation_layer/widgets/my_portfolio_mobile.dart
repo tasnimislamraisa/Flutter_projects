@@ -13,7 +13,7 @@ class MyPortfolioMobile extends StatelessWidget {
       alignment: Alignment.center,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
-        mainAxisAlignment: MainAxisAlignment.center,
+        mainAxisAlignment: MainAxisAlignment.start,
         children: [
           const Row(
             mainAxisAlignment: MainAxisAlignment.center,

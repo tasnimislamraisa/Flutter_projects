@@ -6,7 +6,7 @@ class ContactDesktop extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: Utils.getScreenSize(context).height / 1.2,
+      height: Utils.getScreenSize(context).height ,
       constraints: const BoxConstraints(minHeight: 350.0),
       padding: const EdgeInsets.all(80),
       color: colors.scaffoldBgDarkest,

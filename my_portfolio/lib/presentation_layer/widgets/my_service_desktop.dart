@@ -6,7 +6,7 @@ class MyServiceDesktop extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: Utils.getScreenSize(context).height / 1.2,
+      height: Utils.getScreenSize(context).height ,
       constraints: const BoxConstraints(minHeight: 350.0),
       //margin: const EdgeInsets.symmetric(horizontal: 50, vertical: 50),
       padding: const EdgeInsets.all(100),

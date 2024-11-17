@@ -8,10 +8,10 @@ class AboutMobile extends StatelessWidget {
     return Container(
       height: Utils.getScreenSize(context).height / 1.2,
       constraints: const BoxConstraints(minHeight: 350.0),
-      margin: const EdgeInsets.symmetric(horizontal: 20),
+      //margin: const EdgeInsets.symmetric(horizontal: 20),
       color: Colors.black,
       child: Column(
-        mainAxisAlignment: MainAxisAlignment.start,
+        mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           const SizedBox(
