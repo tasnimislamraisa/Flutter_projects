@@ -1,5 +1,5 @@
-import 'dart:math';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';  // Import flutter_svg
 import '../components/my_imports.dart';
 
 class MainDesktop extends StatefulWidget {
@@ -9,29 +9,8 @@ class MainDesktop extends StatefulWidget {
   _MainDesktopState createState() => _MainDesktopState();
 }
 
-class _MainDesktopState extends State<MainDesktop> with SingleTickerProviderStateMixin {
+class _MainDesktopState extends State<MainDesktop> {
   bool isHovered = false;
-  late AnimationController _controller;
-  late List<String> codingLanguages;
-
-  @override
-  void initState() {
-    super.initState();
-    _controller = AnimationController(
-      vsync: this,
-      duration: const Duration(seconds: 1),
-    )..addListener(() {
-      setState(() {});
-    });
-
-    codingLanguages = ["Flutter", "Dart", "Python", "JavaScript", "HTML", "CSS", "Firebase"];
-  }
-
-  @override
-  void dispose() {
-    _controller.dispose();
-    super.dispose();
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -49,7 +28,7 @@ class _MainDesktopState extends State<MainDesktop> with SingleTickerProviderStat
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              // Animated Greeting Text
+              // Animated Greeting Text with multiple colors
               DefaultTextStyle(
                 style: const TextStyle(
                   fontSize: 30,
@@ -65,7 +44,7 @@ class _MainDesktopState extends State<MainDesktop> with SingleTickerProviderStat
                     ),
                     TypewriterAnimatedText(
                       "Tasnim Islam Raisa\n",
-                      textStyle: const TextStyle(color: colors.yellowPrimary,),
+                      textStyle: const TextStyle(color: Colors.yellow),
                       speed: const Duration(milliseconds: 100),
                     ),
                     TypewriterAnimatedText(
@@ -74,7 +53,7 @@ class _MainDesktopState extends State<MainDesktop> with SingleTickerProviderStat
                       speed: const Duration(milliseconds: 100),
                     ),
                   ],
-                  repeatForever: true,
+                  repeatForever: true, // Repeats the animation
                 ),
               ),
               const SizedBox(height: 15),
@@ -86,10 +65,10 @@ class _MainDesktopState extends State<MainDesktop> with SingleTickerProviderStat
                     // Define your action here
                   },
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: colors.yellowPrimary,  // Button background color
+                    backgroundColor: colors.yellowPrimary, // Button background color
                     foregroundColor: Colors.white, // Text color
                     shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(4),
+                      borderRadius: BorderRadius.circular(4), // Rounded corners
                     ),
                   ),
                   child: const Text("Get in touch"),
@@ -98,54 +77,42 @@ class _MainDesktopState extends State<MainDesktop> with SingleTickerProviderStat
             ],
           ),
 
-          // Right Column: Profile Picture with Animation
+          // Right Column: Profile Picture with Hover Effect
           Center(
             child: MouseRegion(
               onEnter: (_) {
-                setState(() => isHovered = true);
-                _controller.repeat(reverse: false);
+                setState(() {
+                  isHovered = true;
+                });
               },
               onExit: (_) {
-                setState(() => isHovered = false);
-                _controller.stop();
+                setState(() {
+                  isHovered = false;
+                });
               },
               child: Stack(
-                alignment: Alignment.center,
+                alignment: Alignment.bottomCenter,
                 children: [
-                  // Profile Picture
+                  // SVG Image appears when hovered
+                  if (isHovered)
+                    SvgPicture.asset(
+                      AsstesPath.v3, // Path to your SVG file
+                      //color: colors.hintDark,
+                      width: screenWidth * 0.5,
+                      height: screenHeight * 0.5,
+                    ),
+                  // Profile Picture (Circle)
                   ClipOval(
                     child: SizedBox(
-                      width: screenWidth * 0.3,
-                      height: screenWidth * 0.3,
-                      child:  Image.asset(
-                        AsstesPath.pic,
-                        fit: BoxFit.cover, // Ensures the image fills the circle
+                      width: screenWidth * 0.2,
+                      height: screenWidth * 0.2,
+                      child: Image.asset(
+                        AsstesPath.dp,
+                        fit: BoxFit.cover,
                       ),
                     ),
                   ),
 
-                  // Animated coding language names
-                  if (isHovered)
-                    ...List.generate(codingLanguages.length, (index) {
-                      final randomAngle = Random().nextDouble() * 2 * pi; // Random angle in radians
-                      final distance = (screenWidth * 0.15) + (5 * Random().nextDouble()); // Reduced distance for slower movement
-
-                      return Positioned(
-                        left: screenWidth * 0.15 + distance * cos(randomAngle),
-                        top: screenWidth * 0.15 + distance * sin(randomAngle),
-                        child: Transform.scale(
-                          scale: (1.0 + 0.3 * sin(_controller.value * 2 * pi)), // Adjusted scale for smoother animation
-                          child: Text(
-                            codingLanguages[index],
-                            style: TextStyle(
-                              fontSize: 16 + Random().nextInt(8).toDouble(), // Adjusted font size range
-                              color: Colors.white.withOpacity(0.8),
-                              fontWeight: FontWeight.bold,
-                            ),
-                          ),
-                        ),
-                      );
-                    }),
                 ],
               ),
             ),

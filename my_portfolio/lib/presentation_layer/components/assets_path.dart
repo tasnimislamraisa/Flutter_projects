@@ -1,7 +1,7 @@
 class AsstesPath{
   static const String _base = "assets";
   static const String images = "$_base/images";
-  static const String dp = "$images/raisa.png";
+  static const String dp = "$images/dp.jpg";
   static const String pic = "$images/pic.png";
   static const String cLang = "$images/c++.png";
   static const String dart = "$images/dart.png";
@@ -13,5 +13,6 @@ class AsstesPath{
   static const String ios = "$images/ios.png";
   static const String web = "$images/web.jpeg";
   static const String software = "$images/software.jpeg";
+  static const String v3 = "$images/v3.svg";
 
 }
