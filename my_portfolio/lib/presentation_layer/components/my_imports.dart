@@ -1,6 +1,8 @@
 // Exporting Flutter packages
 export 'package:flutter/material.dart';
 
+export 'dart:math';
+
 // Exporting internal components and files
 export 'package:my_portfolio/presentation_layer/components/color.dart';
 export 'package:my_portfolio/presentation_layer/components/nav_item.dart';
@@ -27,6 +29,9 @@ export 'package:my_portfolio/presentation_layer/widgets/my_service_mobile.dart';
 
 export 'package:my_portfolio/presentation_layer/widgets/my_portfolio_desktop.dart';
 export 'package:my_portfolio/presentation_layer/widgets/my_portfolio_mobile.dart';
-
+export 'package:animated_text_kit/animated_text_kit.dart';
 export 'package:sizer/sizer.dart';
-
+export 'package:my_portfolio/presentation_layer/widgets/contact_desktop.dart';
+export 'package:my_portfolio/presentation_layer/widgets/contact_mobile.dart';
+export 'package:my_portfolio/presentation_layer/widgets/my_experience_desktop.dart';
+export 'package:my_portfolio/presentation_layer/widgets/my_experience_mobile.dart';

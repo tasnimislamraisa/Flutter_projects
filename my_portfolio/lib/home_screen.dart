@@ -1,8 +1,3 @@
-import 'package:my_portfolio/presentation_layer/widgets/contact_desktop.dart';
-import 'package:my_portfolio/presentation_layer/widgets/contact_mobile.dart';
-import 'package:my_portfolio/presentation_layer/widgets/my_experience_desktop.dart';
-import 'package:my_portfolio/presentation_layer/widgets/my_experience_mobile.dart';
-
 import 'presentation_layer/components/my_imports.dart';
 
 class HomeScreen extends StatefulWidget {
