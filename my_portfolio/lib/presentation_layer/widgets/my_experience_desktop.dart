@@ -97,7 +97,7 @@ class MyExperienceDesktop extends StatelessWidget {
       height: Utils.getScreenSize(context).height,
       constraints: const BoxConstraints(minHeight: 350.0),
       padding: const EdgeInsets.all(100),
-      color: colors.scaffoldBg,
+      color: colors.scaffoldBgDarker,
       child: Column(
         mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.start,

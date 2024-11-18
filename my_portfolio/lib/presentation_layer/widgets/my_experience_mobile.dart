@@ -9,7 +9,7 @@ class MyExperiencesMobile extends StatelessWidget {
       height: Utils.getScreenSize(context).height / 1.2,
       constraints: const BoxConstraints(minHeight: 350.0),
       padding: const EdgeInsets.all(20), // Reduced padding for mobile
-      color: colors.scaffoldBg,
+      color: colors.scaffoldBgDarker,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         mainAxisAlignment: MainAxisAlignment.start,

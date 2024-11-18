@@ -7,13 +7,13 @@ class ContactMobile extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 40),
-      color: colors.scaffoldBgDarkest,
+      color: colors.scaffoldBg,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          Row(
+          const Row(
             mainAxisAlignment: MainAxisAlignment.center,
-            children: const [
+            children: [
               Text(
                 "Contact ",
                 style: TextStyle(

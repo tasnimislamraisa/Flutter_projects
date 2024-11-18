@@ -9,7 +9,7 @@ class ContactDesktop extends StatelessWidget {
       height: Utils.getScreenSize(context).height ,
       constraints: const BoxConstraints(minHeight: 350.0),
       padding: const EdgeInsets.all(80),
-      color: colors.scaffoldBgDarkest,
+      color: colors.scaffoldBg,
       alignment: Alignment.center,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.center,

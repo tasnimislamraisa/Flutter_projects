@@ -8,7 +8,7 @@ class HeaderDesktop extends StatelessWidget {
     return Container(
       height: 100,
       margin: const EdgeInsets.symmetric(vertical: 10, horizontal: 20),
-      width: double.maxFinite,
+      width: Utils.getScreenWidth(context),
       decoration: kHeaderDecoration,
       child: Row(
         children: [
@@ -18,17 +18,18 @@ class HeaderDesktop extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.all(20.0),
               child: TextButton(
-                onPressed: () {},
+                onPressed: () {
+                },
                 child: Text(
                   navTitles[i],
-                  style: const TextStyle(
-                    fontSize: 16,
+                  style: TextStyle(
+                    fontSize: 13.sp,
                     fontWeight: FontWeight.w500,
                     color: colors.whitePrimary,
                   ),
                 ),
               ),
-            )
+            ),
         ],
       ),
     );

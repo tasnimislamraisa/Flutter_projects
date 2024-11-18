@@ -19,14 +19,13 @@ class _HomeScreenState extends State<HomeScreen> {
     return LayoutBuilder(
         // constrain :it  contains information about screen/window size
         builder: (context, constrains) {
-      bool isDesktop =
-          constrains.maxWidth >= 900; // Set a breakpoint for desktop screens
-      bool isTablet = constrains.maxWidth >= 600 &&
-          constrains.maxWidth < 900; // Set a breakpoint for tablets
+      bool isDesktop = constrains.maxWidth >= 900; // Set a breakpoint for desktop screens
+      bool isMobile = constrains.maxWidth >= 600;
+      //bool isTablet = constrains.maxWidth >= 600 && constrains.maxWidth < 900; // Set a breakpoint for tablets
       return Scaffold(
         key: scaffoldKey,
         backgroundColor: colors.scaffoldBg,
-        endDrawer: constrains.maxWidth >= kMinDesktopWith
+        endDrawer: constrains.maxWidth >= 900
             ? null
             : const DrawerMobile(),
         body: ListView(
@@ -35,13 +34,6 @@ class _HomeScreenState extends State<HomeScreen> {
             // Main
             if (isDesktop)
               const HeaderDesktop()
-            else if (isTablet)
-              HeaderMobile(
-                onLogoTap: () {},
-                onMenuTap: () {
-                  scaffoldKey.currentState?.openEndDrawer();
-                },
-              )
             else
               HeaderMobile(
                 onLogoTap: () {},
@@ -49,9 +41,17 @@ class _HomeScreenState extends State<HomeScreen> {
                   scaffoldKey.currentState?.openEndDrawer();
                 },
               ),
+
             //const MainDesktop(),
             isDesktop ? const MainDesktop() : const MainMobile(),
             //if (isDesktop) const MainDesktop() else if(isTablet) const MainMobile(),
+
+            // My Experience
+
+            isDesktop
+                ? MyExperienceDesktop()
+                : const MyExperiencesMobile(),
+
             // about me
             isDesktop ? const AboutDesktop() : const AboutMobile(),
 
@@ -60,12 +60,6 @@ class _HomeScreenState extends State<HomeScreen> {
 
             // my portfolio : Desktop
             isDesktop ? const MyPortfolioDesktop() : const MyPortfolioMobile(),
-
-            // My Experience
-
-            isDesktop
-                ? MyExperienceDesktop()
-                : const MyExperiencesMobile(),
 
             // contact
             isDesktop ? const ContactDesktop() : const ContactMobile(),
