@@ -35,3 +35,5 @@ export 'package:my_portfolio/presentation_layer/widgets/contact_desktop.dart';
 export 'package:my_portfolio/presentation_layer/widgets/contact_mobile.dart';
 export 'package:my_portfolio/presentation_layer/widgets/my_experience_desktop.dart';
 export 'package:my_portfolio/presentation_layer/widgets/my_experience_mobile.dart';
+export 'package:flutter/material.dart';
+export 'package:flutter_svg/flutter_svg.dart';
