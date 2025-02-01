@@ -12,9 +12,13 @@ class _MySplashScreenState extends State<MySplashScreen> {
   void initState() {
     super.initState();
     Future.delayed(const Duration(seconds: 2), () {
-      Navigator.pushReplacementNamed(context, '/home');
+      Navigator.pushReplacement(
+        context,
+        MaterialPageRoute(builder: (context) => HomeScreen()),
+      );
     });
   }
+
 
   @override
   Widget build(BuildContext context) {
